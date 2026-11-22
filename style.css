@@ -1,0 +1,175 @@
+@font-face {
+  font-family: PublicPixel;
+  src: url(PublicPixel.woff2);
+}
+
+@font-face {
+  font-family: NJC8;
+  src: url(NotJamChunky8.ttf);
+}
+
+@font-face {
+  font-family: PS2P;
+  src: url(PressStart2P-Regular.ttf);
+}
+
+* {
+    font-family: PS2P;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+body {
+    margin: 0;
+    padding-top: 96px; /* same as the nav height below */
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 36px;
+    z-index: 1000;
+    background-color: black;
+    border-width: 0px 0px 4px 0px;
+    border-style: solid;
+    border-color: grey;
+}
+
+section {
+    padding: 64px 32px;
+    max-width: 960px;
+    margin: 0 auto;
+    /* stops section headings hiding under the sticky nav when jumping to them */
+    scroll-margin-top: 90px;
+}
+
+footer {
+    scroll-margin-top: 90px;
+}
+
+h3 {
+    color: red;
+}
+
+/* Nav links and buttons share one style */
+.navlink,
+.footer-links a {
+    display: inline-block;
+    padding: 18px 36px;
+    background-color: black;
+    cursor: pointer;
+}
+
+.navlink:hover,
+.footer-links a:hover {
+    background-color: white;
+    color: black;
+}
+
+.navlink.cta {
+    background-color: red;
+}
+
+.navlink.cta:hover {
+    background-color: white;
+    color: black;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 2px solid grey;
+    padding: 16px 20px;
+    text-align: left;
+}
+
+th {
+    color: red;
+}
+
+td:first-child {
+    font-weight: bold;
+}
+
+/* Comparison: two columns with a divider */
+.compare {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.compare .col {
+    flex: 1;
+    padding: 0 36px;
+}
+
+.compare .col + .col {
+    border-left: 4px solid grey;
+}
+
+/* List dashes drawn in the pixel font instead of default bullets */
+ul {
+    list-style: none;
+}
+
+li::before {
+    content: "- ";
+    color: red;
+}
+
+video {
+    width: 100%;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+}
+
+.even {
+    padding: 12px 36px;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 640px) {
+    .compare {
+        flex-direction: column;
+    }
+
+    .compare .col {
+        padding: 0;
+    }
+
+    .compare .col + .col {
+        border-left: none;
+        border-top: 4px solid grey;
+        margin-top: 24px;
+        padding-top: 24px;
+    }
+
+    .even {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
